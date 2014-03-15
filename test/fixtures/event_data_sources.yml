@@ -1,9 +1,6 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name: MyString
-  url: MyString
+Eastbook.eu - Announcement:
+  name: Eastbook.eu - Announcement
+  url: http://eastbook.eu/category/material/announcement
 
-two:
-  name: MyString
-  url: MyString
