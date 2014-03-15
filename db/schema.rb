@@ -11,11 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140315115030) do
+ActiveRecord::Schema.define(version: 20140315131618) do
 
   create_table "event_data_sources", force: true do |t|
     t.string   "name"
     t.string   "url"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "events", force: true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.string   "url"
+    t.integer  "event_data_source_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
