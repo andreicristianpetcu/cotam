@@ -20,5 +20,6 @@
 $(function(){ $(document).foundation(); });
 var map = L.map('map').setView([51.505, -0.09], 13);
 L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(map);
-map.panTo(new L.LatLng(52.14, 21.1));
+map.panTo(new L.LatLng(52.2348, 21.0076));
 map.setZoom(11)
+var marker = L.marker([52.2348, 21.0076]).addTo(map);
