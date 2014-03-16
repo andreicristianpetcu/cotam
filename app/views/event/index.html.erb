@@ -4,6 +4,7 @@
       <ul>
         <% for @event in @events %>
           <%= link_to @event.short_name.html_safe, @event.url %>
+          <%= link_to "->", @event, :class=>"admin_event"%>
           </br>
           </br>
         <% end %>
