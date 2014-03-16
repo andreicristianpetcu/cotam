@@ -35,6 +35,8 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+gem 'rails_admin'
+
 gem 'pry-rails', :group => :development
 
 # Use ActiveModel has_secure_password
