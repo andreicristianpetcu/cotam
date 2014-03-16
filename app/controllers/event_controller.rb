@@ -1,5 +1,5 @@
 class EventController < ApplicationController
   def index
-    @events = Event.all
+    @events = Event.last(12).reverse
   end
 end
