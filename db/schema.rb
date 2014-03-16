@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140315131618) do
+ActiveRecord::Schema.define(version: 20140316104327) do
 
   create_table "event_data_sources", force: true do |t|
     t.string   "name"
@@ -27,6 +27,8 @@ ActiveRecord::Schema.define(version: 20140315131618) do
     t.integer  "event_data_source_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.float    "lat",                  default: 52.14
+    t.float    "long",                 default: 21.1
   end
 
 end
