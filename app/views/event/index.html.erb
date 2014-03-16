@@ -1,11 +1,16 @@
-<h1>Events</h1>
-
- <div id="map"></div>
-
-<ul>
-  <% for @event in @events %>
-    <%= link_to @event.name, @event.url %>
-    </br>
-    </br>
-  <% end %>
-</ul>
+<div id="map"></div>
+<div id="content">
+  <div class="row">
+    <div class="large-12 columns">
+      <div class="panel radius">
+        <ul>
+          <% for @event in @events %>
+            <%= link_to @event.name, @event.url %>
+            </br>
+            </br>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
