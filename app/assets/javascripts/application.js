@@ -23,27 +23,13 @@ L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(map);
 map.panTo(new L.LatLng(52.2348, 21.0076));
 map.setZoom(11);
 
-var marker = L.marker([52.2048 + Math.random()*0.033, 21.0076 + Math.random()*0.033]).addTo(map);
-var marker = L.marker([52.2048 + Math.random()*0.033, 21.0076 + Math.random()*0.033]).addTo(map);
-var marker = L.marker([52.2048 + Math.random()*0.033, 21.0076 + Math.random()*0.033]).addTo(map);
-var marker = L.marker([52.2048 + Math.random()*0.033, 21.0076 + Math.random()*0.033]).addTo(map);
-var marker = L.marker([52.2048 + Math.random()*0.033, 21.0076 + Math.random()*0.033]).addTo(map);
-var marker = L.marker([52.2048 + Math.random()*0.033, 21.0076 + Math.random()*0.033]).addTo(map);
-var marker = L.marker([52.2048 + Math.random()*0.033, 21.0076 + Math.random()*0.033]).addTo(map);
-var marker = L.marker([52.2048 + Math.random()*0.033, 21.0076 + Math.random()*0.033]).addTo(map);
-var marker = L.marker([52.2048 + Math.random()*0.033, 21.0076 + Math.random()*0.033]).addTo(map);
-var marker = L.marker([52.2048 + Math.random()*0.033, 21.0076 + Math.random()*0.033]).addTo(map);
-var marker = L.marker([52.2048 + Math.random()*0.033, 21.0076 + Math.random()*0.033]).addTo(map);
-var marker = L.marker([52.2048 + Math.random()*0.033, 21.0076 + Math.random()*0.033]).addTo(map);
-
 put_marks = function(){
-
   $('.admin_event').each(function(){
     var url = $(this).attr("href");
     var json_url = '/admin' + url.replace('/events', '/event') + '.json';
 
     $.getJSON(json_url, function(data) {
-      var marker = L.marker([data.lat + Math.floor((Math.random()*10)+1), data.long]).addTo(map);
+      var marker = L.marker([data.lat, data.long]).addTo(map);
     });        
   });
 }
