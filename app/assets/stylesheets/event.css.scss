@@ -3,12 +3,13 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 #map { 
   height: 100%; 
-  z-index: -10
+  z-index: -10;
 }
 
 #content {
   position: absolute;
   top: 60px;
   left: 60px;
-  z-index: 10
+  z-index: 10;
+  width: 100%;
 }
