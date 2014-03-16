@@ -30,6 +30,7 @@ put_marks = function(){
 
     $.getJSON(json_url, function(data) {
       var marker = L.marker([data.lat, data.long]).addTo(map);
+      marker.bindPopup("<a href=\"" + data.url + "\" target=\"_blank\" >" + data.name + "<\a>");
     });        
   });
 }
