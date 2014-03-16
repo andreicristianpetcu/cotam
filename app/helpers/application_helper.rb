@@ -2,9 +2,9 @@ require 'nokogiri'
 
 module ApplicationHelper
   def self.generate_events(event_data_source)
-    page = download_page(event_data_source)
-    #download page
-    #parse page
+    if event_data_source.nil?
+      event_data_source = EventDataSource.first
+    end
     #check if each event is duplicate
     #return onlyuniqueevents
   end
