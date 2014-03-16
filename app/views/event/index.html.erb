@@ -1,17 +1,15 @@
 <div id="map">
-  <div id="content">
-    <div id="visible" class="large-3 small-12 columns">
-      <div class="panel radius">
-        <ul>
-          <% for @event in @events %>
-            <%= link_to @event.short_name.html_safe, @event.url %>
-            </br>
-            </br>
-          <% end %>
-        </ul>
-      </div>
-      <a class="button expand" href="#">Add your event</a>
+  <div id="visible" class="large-3 small-12 columns">
+    <div class="panel radius">
+      <ul>
+        <% for @event in @events %>
+          <%= link_to @event.short_name.html_safe, @event.url %>
+          </br>
+          </br>
+        <% end %>
+      </ul>
     </div>
-    <div class="large-9 small-12 columns"></div>
+    <a class="button expand" href="#">Add your event</a>
   </div>
+  <div class="large-9 small-12 columns"></div>
 </div>
