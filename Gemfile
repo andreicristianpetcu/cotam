@@ -36,6 +36,7 @@ group :doc do
 end
 
 gem 'rails_admin'
+gem 'devise'
 
 gem 'pry-rails', :group => :development
 
