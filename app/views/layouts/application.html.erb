@@ -19,7 +19,12 @@
   <% if alert %>
     <p class="alert alert-error"><%= alert %></p>
   <% end %> 
-
+  <% if flash[:error] -%>
+    <p class='error'><%=h flash[:error] %></p>
+  <% end -%>
+  <% if flash[:notice] -%>
+    <p class='notice'><%=h flash[:notice] %></p>
+  <% end -%>
     <%= yield %>
     <%= javascript_include_tag "application" %>
   </body>

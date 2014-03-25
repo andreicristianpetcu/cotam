@@ -1,7 +1,7 @@
 Cotam::Application.routes.draw do
   devise_for :users
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
-  root "event#index"
+  root :to => "event#index"
   get "event/index"
   resources :events
   # match '/events/:id.json'=>'events#show', :format=>false, :defaults=>{:format=>'json'}

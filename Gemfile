@@ -37,6 +37,7 @@ end
 
 gem 'rails_admin'
 gem 'devise'
+gem 'cancan'
 
 gem 'pry-rails', :group => :development
 
