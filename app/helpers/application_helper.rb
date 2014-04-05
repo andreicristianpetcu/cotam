@@ -19,8 +19,13 @@ module ApplicationHelper
     name_selector = event_data_source.name_selector
     page.css(item_selector).each do |item|
       e = Event.new
-      e.name = item.css(name_selector)[0].text.strip
-      e.url = item.css(name_selector)[0]["href"].strip
+      anchor = item
+      if not name_selector.nil? and not name_selector.empty? then 
+        anchor = item.css(name_selector)[0]
+      end
+      e.name = anchor.text.strip
+      puts "Checking " + e.name
+      e.url = anchor["href"].strip
       if !e.url.starts_with?("http") && !e.url.starts_with?("https") then
         e.url = page_url + e.url
       end
