@@ -1,4 +1,5 @@
 class EventController < ApplicationController
+  
   respond_to :json
 
   def index
@@ -10,7 +11,7 @@ class EventController < ApplicationController
   end
 
   def create
-    @event = Event.new params[:event]
+    @event = Event.create(event_params)
     if @event.save
       redirect_to events_path
     else
@@ -26,5 +27,8 @@ class EventController < ApplicationController
     #   format.xml  { render :xml => @event }
     #   format.json { render :json => @event }
     # end
+  end
+  def event_params
+    params.require(:event).permit(:name, :description, :url, :lat, :long)
   end
 end
