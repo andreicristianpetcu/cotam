@@ -2,7 +2,7 @@ class EventController < ApplicationController
   respond_to :json
 
   def index
-    @events = Event.first(12)
+    @events = Event.where("visible = true").order(created_at: :desc).limit(12)
   end
   
   def show
