@@ -21,6 +21,9 @@ module ApplicationHelper
       e = Event.new
       e.name = item.css(name_selector)[0].text.strip
       e.url = item.css(name_selector)[0]["href"].strip
+      if !e.url.starts_with?("http") && !e.url.starts_with?("https") then
+        e.url = page_url + e.url
+      end
       old = Event.find_by_url(e.url)
       if old == nil then
         puts "Saved event " + e.name
