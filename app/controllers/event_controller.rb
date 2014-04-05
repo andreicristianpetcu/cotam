@@ -10,7 +10,7 @@ class EventController < ApplicationController
   end
 
   def create
-    @event = Event.new params[:post]
+    @event = Event.new params[:event]
     if @event.save
       redirect_to events_path
     else
