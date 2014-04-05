@@ -1,8 +1,24 @@
-<%= form_for @event do |form| %>
-  Name <%= form.text_field :name %></br>
-  Description <%= form.text_field :description %></br>
-  Url <%= form.text_field :url %></br>
-  Latitude <%= form.text_field :lat %></br>
-  Longitude <%= form.text_field :long %></br>
-  <%= form.submit %>
-<% end -%>
+<div id="visible" class="large-3 small-4 columns">
+  <div class="panel radius">
+    <%= form_for @event do |form| %>
+      <ul>
+        Name <%= form.text_field :name %>
+      </ul>
+      <ul>
+        Description <%= form.text_field :description %>
+      </ul>
+      <ul>
+        Url <%= form.text_field :url %>
+      </ul>
+      <ul>
+        Latitude <%= form.text_field :lat %>
+      </ul>
+      <ul>
+        Longitude <%= form.text_field :long %>
+      </ul>
+      <ul>
+        <%= form.submit %>
+      </ul>
+    <% end -%>
+  </div>
+</div>

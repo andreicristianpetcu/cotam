@@ -5,7 +5,7 @@ Cotam::Application.routes.draw do
   get "event/index"
   get "event/new", to: "event#new", as: :events
   post "event/new", to: "event#create"
-  get "event/:id", to: "event#show"
+  get "event/:id", to: "event#show", as: :event
   # resource :event
   # match '/events/:id.json'=>'events#show', :format=>false, :defaults=>{:format=>'json'}
   # The priority is based upon order of creation: first created -> highest priority.
