@@ -12,13 +12,16 @@ module ApplicationHelper
   def self.download_page(event_data_source)
     page_url = event_data_source.url
     page = Nokogiri::HTML(open(page_url))
-    item_selector = 'div.newsline_item'
-    name_selector = 'h3 a'
+    item_selector = event_data_source.item_selector
+    name_selector = event_data_source.name_selector
     page.css(item_selector).each do |item|
       e = Event.new
       e.name = item.css(name_selector)[0].text
       e.url = item.css(name_selector)[0]["href"]
-      e.save
+      old = Event.find_by_url(e.url)
+      if old == nil then
+        e.save
+      end
     end
   end
 end
