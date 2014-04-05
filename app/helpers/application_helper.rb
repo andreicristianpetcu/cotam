@@ -12,18 +12,18 @@ module ApplicationHelper
   end
 
   def self.download_page(event_data_source)
-    puts "Checking EDS " + event_data_source.to_s
+    puts "Checking Source " + event_data_source.name
     page_url = event_data_source.url
     page = Nokogiri::HTML(open(page_url))
     item_selector = event_data_source.item_selector
     name_selector = event_data_source.name_selector
     page.css(item_selector).each do |item|
       e = Event.new
-      e.name = item.css(name_selector)[0].text
-      e.url = item.css(name_selector)[0]["href"]
+      e.name = item.css(name_selector)[0].text.strip
+      e.url = item.css(name_selector)[0]["href"].strip
       old = Event.find_by_url(e.url)
       if old == nil then
-        puts "saved " + e.to_yaml
+        puts "Saved event " + e.name
         e.save!
       end
     end
