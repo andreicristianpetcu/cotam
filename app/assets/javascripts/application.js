@@ -31,9 +31,11 @@ put_marks = function(){
     $.getJSON(json_url, function(data) {
       var marker = L.marker([data.lat, data.long]).addTo(map);
       marker.bindPopup("<a href=\"" + data.url + "\" target=\"_blank\" >" + data.name + "<\a>");
-      link.attr("href", "");
-      link.click(function(){
+      // link.attr("href", "#");
+      link.click(function(e){
+        e.preventDefault();
         map.panTo(new L.LatLng(data.lat, data.long));
+        setTimeout(function() {marker.openPopup();},500);
       });
     });        
   });
