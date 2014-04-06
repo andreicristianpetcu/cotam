@@ -1,6 +1,6 @@
 class EventController < ApplicationController
   
-  respond_to :json
+  respond_to :html, :json
 
   def index
     @events = Event.where("visible = true").order(created_at: :desc).limit(12)
@@ -24,7 +24,7 @@ class EventController < ApplicationController
     respond_with(@event)
     # respond_to do |format|
     #   format.html # show.html.erb
-    #   format.xml  { render :xml => @event }
+    #   # format.xml  { render :xml => @event }
     #   format.json { render :json => @event }
     # end
   end

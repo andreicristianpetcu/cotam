@@ -25,14 +25,18 @@ map.setZoom(11);
 
 put_marks = function(){
   $('.admin_event').each(function(){
+    var link = $(this);
     var url = $(this).attr("href");
-    var json_url = '/admin' + url.replace('/events', '/event') + '.json';
-
+    var json_url = url + '.json';
     $.getJSON(json_url, function(data) {
       var marker = L.marker([data.lat, data.long]).addTo(map);
       marker.bindPopup("<a href=\"" + data.url + "\" target=\"_blank\" >" + data.name + "<\a>");
+      link.attr("href", "");
+      link.click(function(){
+        map.panTo(new L.LatLng(data.lat, data.long));
+      });
     });        
   });
-}
+};
 
 put_marks();
